@@ -30,11 +30,13 @@
                     if(arr.get(i) > arr.get(max) & arr.get(i) + alreadyFound1 + alreadyFound2 < m){
                         max = i;
                     }
+                }
                         if(max == 0){
                             return -1;
                         }
-                        return [i];
-                    }
+                        
+                        return new int[] {i};
+                    
                 }
                 
                 int maxNum = -1;
@@ -43,7 +45,7 @@
                 
                 
                 for(int i = alreadyFound1; i <arr.size();i++){
-                    int ans = iceCreamParlorHelp(m, arr, alreadyFound1, i)
+                    int ans = iceCreamParlorHelp(m, arr, alreadyFound1, i);
                     if(arr.get(ans) + arr.get(i) > max & alreadyFound1 + arr.get(i) + arr.get(ans) < m){
                         max = arr.get(ans) + arr.get(i);
                         found2 = i;
@@ -65,7 +67,7 @@
                     max = arr.get(ans[0]) + arr.get(ans[1]) + arr.get(i);
                     found1 = i;
                     found2 = ans[0];
-                    found3 = ans[1]
+                    found3 = ans[1];
                 }
             }
                 if(max == -1){
